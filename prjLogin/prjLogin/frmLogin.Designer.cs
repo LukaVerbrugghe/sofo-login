@@ -46,7 +46,7 @@
             // 
             // txtNaam
             // 
-            this.txtNaam.Location = new System.Drawing.Point(166, 60);
+            this.txtNaam.Location = new System.Drawing.Point(202, 57);
             this.txtNaam.Name = "txtNaam";
             this.txtNaam.Size = new System.Drawing.Size(100, 20);
             this.txtNaam.TabIndex = 1;
@@ -62,16 +62,16 @@
             // 
             // txtWachtwoord
             // 
-            this.txtWachtwoord.Location = new System.Drawing.Point(202, 103);
+            this.txtWachtwoord.Location = new System.Drawing.Point(202, 100);
             this.txtWachtwoord.Name = "txtWachtwoord";
             this.txtWachtwoord.Size = new System.Drawing.Size(100, 20);
             this.txtWachtwoord.TabIndex = 1;
             // 
             // btnLogin
             // 
-            this.btnLogin.Location = new System.Drawing.Point(105, 197);
+            this.btnLogin.Location = new System.Drawing.Point(116, 157);
             this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(75, 23);
+            this.btnLogin.Size = new System.Drawing.Size(186, 23);
             this.btnLogin.TabIndex = 2;
             this.btnLogin.Text = "Log in";
             this.btnLogin.UseVisualStyleBackColor = true;
@@ -80,7 +80,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(426, 287);
             this.Controls.Add(this.btnLogin);
             this.Controls.Add(this.txtWachtwoord);
             this.Controls.Add(this.txtNaam);
