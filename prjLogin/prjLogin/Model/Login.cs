@@ -14,3 +14,5 @@ namespace prjLogin.Model
         public string Password { get; set; }
     }
 }
+
+//meerdere tabellen --> meerdere models

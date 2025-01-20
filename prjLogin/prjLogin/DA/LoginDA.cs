@@ -15,7 +15,7 @@ namespace prjLogin.DA
     public class LoginDA
     {
         //methode maken
-        public static bool LoginValidate(Login L)
+        public static bool LoginValidate(Model.Login L)
         {
             //controleren of de gebruikersnaam en wachtwoord uit de tabel correct zijn
             //hoe? met een bool (vanzelfspreken)
