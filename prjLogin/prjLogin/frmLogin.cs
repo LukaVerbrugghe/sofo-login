@@ -50,5 +50,10 @@ namespace prjLogin
 
             LoginDA.Register(L);
         }
+
+        private void btnVerwijder_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

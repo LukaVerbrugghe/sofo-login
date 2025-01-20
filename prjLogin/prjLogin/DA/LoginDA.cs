@@ -61,6 +61,19 @@ namespace prjLogin.DA
             MessageBox.Show("Uw account werd gerigistreerd.");
             conn.Close();
         }
+
+        public static void Delete(Login L)
+        {
+            MySqlConnection conn = Database.MaakVerbinding();
+            string query = "DELETE FROM login.tbllogin(username, password) WHERE Username = @Username AND Password = @Password";
+            MySqlCommand sqlCmd = new MySqlCommand(query, conn);
+            sqlCmd.CommandType = System.Data.CommandType.Text;
+            sqlCmd.Parameters.AddWithValue("@Username", L.Username);
+            sqlCmd.Parameters.AddWithValue("@Password", L.Password);
+            sqlCmd.ExecuteNonQuery();
+            MessageBox.Show("Uw account werd verwijderd.");
+            conn.Close();
+        }
     }
 
 }

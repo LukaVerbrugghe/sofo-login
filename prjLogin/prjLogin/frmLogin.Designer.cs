@@ -34,6 +34,7 @@
             this.txtWachtwoord = new System.Windows.Forms.TextBox();
             this.btnLogin = new System.Windows.Forms.Button();
             this.btnRegistreren = new System.Windows.Forms.Button();
+            this.btnVerwijder = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -89,11 +90,22 @@
             this.btnRegistreren.UseVisualStyleBackColor = true;
             this.btnRegistreren.Click += new System.EventHandler(this.btnRegistreren_Click);
             // 
+            // btnVerwijder
+            // 
+            this.btnVerwijder.Location = new System.Drawing.Point(116, 217);
+            this.btnVerwijder.Name = "btnVerwijder";
+            this.btnVerwijder.Size = new System.Drawing.Size(130, 23);
+            this.btnVerwijder.TabIndex = 4;
+            this.btnVerwijder.Text = "verwijder gebruiker";
+            this.btnVerwijder.UseVisualStyleBackColor = true;
+            this.btnVerwijder.Click += new System.EventHandler(this.btnVerwijder_Click);
+            // 
             // frmLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(426, 287);
+            this.Controls.Add(this.btnVerwijder);
             this.Controls.Add(this.btnRegistreren);
             this.Controls.Add(this.btnLogin);
             this.Controls.Add(this.txtWachtwoord);
@@ -115,6 +127,7 @@
         private System.Windows.Forms.TextBox txtWachtwoord;
         private System.Windows.Forms.Button btnLogin;
         private System.Windows.Forms.Button btnRegistreren;
+        private System.Windows.Forms.Button btnVerwijder;
     }
 }
 
