@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using prjLogin.Helper;
 using prjLogin.Model;
 using MySql.Data.MySqlClient;
+using System.Windows.Forms;
 
 namespace prjLogin.DA
 {
@@ -19,6 +20,7 @@ namespace prjLogin.DA
         {
             //controleren of de gebruikersnaam en wachtwoord uit de tabel correct zijn
             //hoe? met een bool (vanzelfspreken)
+            bool blnLogin = false;
 
             //eerst verbinding maken met de database
             MySqlConnection conn = Database.MaakVerbinding();
@@ -37,6 +39,28 @@ namespace prjLogin.DA
             //executereader: om je commando uit te voeren als je meerdere gegevens uit de databank wilt halen --> datareader nodig
             //executenonquery: om je commando uitte voeren als je aanpassingen wilt maken aan je databank (delete, update, insert)
             //deze 3 zijn ALTIJD een examenvraag!.!.!.!
+
+            //controleren wat er in de count zit
+            if(count == 1)
+            {
+                blnLogin = true;
+            }
+
+            conn.Close();
+            return blnLogin;
+        }
+        public static void Register(Model.Login L)
+        {
+            MySqlConnection conn = Database.MaakVerbinding();
+            string query = "INSERT INTO login.tbllogin(username, password) VALUES (@Username, @Password)";
+            MySqlCommand sqlCmd = new MySqlCommand(query, conn);
+            sqlCmd.CommandType = System.Data.CommandType.Text;
+            sqlCmd.Parameters.AddWithValue("@Username", L.Username);
+            sqlCmd.Parameters.AddWithValue("@Password", L.Password);
+            sqlCmd.ExecuteNonQuery();
+            MessageBox.Show("Uw account werd gerigistreerd.");
+            conn.Close();
         }
     }
+
 }
