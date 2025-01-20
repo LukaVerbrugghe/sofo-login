@@ -35,7 +35,7 @@ namespace prjLogin.DA
             int count = Convert.ToInt32(sqlCmd.ExecuteScalar()); 
             //ececutescalar: om je commando uit te voeren als je 1 gegeven uit je db wilt halen
             //executereader: om je commando uit te voeren als je meerdere gegevens uit de databank wilt halen --> datareader nodig
-            //executenonqueru: om je commando uitte voeren als je aanpassingen wilt maken aan je databank (delete, update, insert)
+            //executenonquery: om je commando uitte voeren als je aanpassingen wilt maken aan je databank (delete, update, insert)
             //deze 3 zijn ALTIJD een examenvraag!.!.!.!
         }
     }
