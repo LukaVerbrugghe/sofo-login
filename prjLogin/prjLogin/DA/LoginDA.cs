@@ -52,13 +52,27 @@ namespace prjLogin.DA
         public static void Register(Model.Login L)
         {
             MySqlConnection conn = Database.MaakVerbinding();
-            string query = "INSERT INTO login.tbllogin(username, password) VALUES (@Username, @Password)";
-            MySqlCommand sqlCmd = new MySqlCommand(query, conn);
-            sqlCmd.CommandType = System.Data.CommandType.Text;
-            sqlCmd.Parameters.AddWithValue("@Username", L.Username);
-            sqlCmd.Parameters.AddWithValue("@Password", L.Password);
-            sqlCmd.ExecuteNonQuery();
-            MessageBox.Show("Uw account werd gerigistreerd.");
+            //controleren of de gebruikersnaam al bestaat
+            string queryUsername = "SELECT COUNT(1) FROM login.tbllogin WHERE Username = @Username";
+            MySqlCommand sqlCmdUsername = new MySqlCommand(queryUsername, conn);
+            sqlCmdUsername.CommandType = System.Data.CommandType.Text;
+            sqlCmdUsername.Parameters.AddWithValue("@Username", L.Username);
+            int count = Convert.ToInt32(sqlCmdUsername.ExecuteScalar());
+            if (count == 1)
+            {
+                MessageBox.Show("Deze gebruikersnaam bestaat al.");
+            }
+            else
+            {
+                string query = "INSERT INTO login.tbllogin(username, password) VALUES (@Username, @Password)";
+                MySqlCommand sqlCmd = new MySqlCommand(query, conn);
+                sqlCmd.CommandType = System.Data.CommandType.Text;
+                sqlCmd.Parameters.AddWithValue("@Username", L.Username);
+                sqlCmd.Parameters.AddWithValue("@Password", L.Password);
+                sqlCmd.ExecuteNonQuery();
+                MessageBox.Show("Uw account werd gerigistreerd.");
+            }
+
             conn.Close();
         }
 
