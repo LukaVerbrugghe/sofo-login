@@ -66,5 +66,21 @@ namespace prjLogin
                 MessageBox.Show("De combinatie van gebruikersnaam en wachtwoord is niet geldig. Er werd geen account verwijderd.");
             }
         }
+
+        private void btnWijzigWachtwoord_Click(object sender, EventArgs e)
+        {
+            Login L = new Model.Login();
+
+            L.Username = txtNaam.Text;
+            L.Password = txtWachtwoord.Text;
+
+            if (LoginDA.LoginValidate(L)) { 
+                LoginDA.ChangePass(L, txtNieuwWachtwoord.Text);
+            }
+            else
+            {
+                MessageBox.Show("De combinatie van gebruikersnaam en wachtwoord is niet geldig. Er werd geen wachtwoord gewijzigd.");
+            }
+        }
     }
 }

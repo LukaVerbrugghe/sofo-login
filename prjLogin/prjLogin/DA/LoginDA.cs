@@ -74,6 +74,20 @@ namespace prjLogin.DA
             MessageBox.Show("Uw account werd verwijderd.");
             conn.Close();
         }
+
+        public static void ChangePass(Login L, string newPassword)
+        {
+            MySqlConnection conn = Database.MaakVerbinding();
+            string query = "UPDATE login.tbllogin SET Password = @NewPassword WHERE Username = @Username AND Password = @OldPassword";
+            MySqlCommand sqlCmd = new MySqlCommand(query, conn);
+            sqlCmd.CommandType = System.Data.CommandType.Text;
+            sqlCmd.Parameters.AddWithValue("@Username", L.Username);
+            sqlCmd.Parameters.AddWithValue("@OldPassword", L.Password);
+            sqlCmd.Parameters.AddWithValue("@NewPassword", newPassword);
+            sqlCmd.ExecuteNonQuery();
+            MessageBox.Show("Uw wachtwoord werd gewijzigd.");
+            conn.Close();
+        }
     }
 
 }

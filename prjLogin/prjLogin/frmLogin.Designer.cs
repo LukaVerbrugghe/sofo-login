@@ -35,6 +35,9 @@
             this.btnLogin = new System.Windows.Forms.Button();
             this.btnRegistreren = new System.Windows.Forms.Button();
             this.btnVerwijder = new System.Windows.Forms.Button();
+            this.btnWijzigWachtwoord = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.txtNieuwWachtwoord = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // label1
@@ -64,47 +67,76 @@
             // 
             // txtWachtwoord
             // 
-            this.txtWachtwoord.Location = new System.Drawing.Point(202, 100);
+            this.txtWachtwoord.Location = new System.Drawing.Point(213, 103);
             this.txtWachtwoord.Name = "txtWachtwoord";
             this.txtWachtwoord.Size = new System.Drawing.Size(100, 20);
-            this.txtWachtwoord.TabIndex = 1;
+            this.txtWachtwoord.TabIndex = 2;
             this.txtWachtwoord.UseSystemPasswordChar = true;
             // 
             // btnLogin
             // 
-            this.btnLogin.Location = new System.Drawing.Point(116, 157);
+            this.btnLogin.Location = new System.Drawing.Point(116, 129);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(186, 23);
-            this.btnLogin.TabIndex = 2;
+            this.btnLogin.TabIndex = 3;
             this.btnLogin.Text = "Log in";
             this.btnLogin.UseVisualStyleBackColor = true;
             this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
             // btnRegistreren
             // 
-            this.btnRegistreren.Location = new System.Drawing.Point(116, 187);
+            this.btnRegistreren.Location = new System.Drawing.Point(116, 159);
             this.btnRegistreren.Name = "btnRegistreren";
             this.btnRegistreren.Size = new System.Drawing.Size(75, 23);
-            this.btnRegistreren.TabIndex = 3;
+            this.btnRegistreren.TabIndex = 4;
             this.btnRegistreren.Text = "Registratie";
             this.btnRegistreren.UseVisualStyleBackColor = true;
             this.btnRegistreren.Click += new System.EventHandler(this.btnRegistreren_Click);
             // 
             // btnVerwijder
             // 
-            this.btnVerwijder.Location = new System.Drawing.Point(116, 217);
+            this.btnVerwijder.Location = new System.Drawing.Point(116, 188);
             this.btnVerwijder.Name = "btnVerwijder";
-            this.btnVerwijder.Size = new System.Drawing.Size(130, 23);
-            this.btnVerwijder.TabIndex = 4;
+            this.btnVerwijder.Size = new System.Drawing.Size(186, 23);
+            this.btnVerwijder.TabIndex = 5;
             this.btnVerwijder.Text = "verwijder gebruiker";
             this.btnVerwijder.UseVisualStyleBackColor = true;
             this.btnVerwijder.Click += new System.EventHandler(this.btnVerwijder_Click);
+            // 
+            // btnWijzigWachtwoord
+            // 
+            this.btnWijzigWachtwoord.Location = new System.Drawing.Point(116, 246);
+            this.btnWijzigWachtwoord.Name = "btnWijzigWachtwoord";
+            this.btnWijzigWachtwoord.Size = new System.Drawing.Size(186, 23);
+            this.btnWijzigWachtwoord.TabIndex = 6;
+            this.btnWijzigWachtwoord.Text = "Verander wachtwoord";
+            this.btnWijzigWachtwoord.UseVisualStyleBackColor = true;
+            this.btnWijzigWachtwoord.Click += new System.EventHandler(this.btnWijzigWachtwoord_Click);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(116, 218);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(98, 13);
+            this.label3.TabIndex = 7;
+            this.label3.Text = "Nieuw wachtwoord";
+            // 
+            // txtNieuwWachtwoord
+            // 
+            this.txtNieuwWachtwoord.Location = new System.Drawing.Point(221, 220);
+            this.txtNieuwWachtwoord.Name = "txtNieuwWachtwoord";
+            this.txtNieuwWachtwoord.Size = new System.Drawing.Size(100, 20);
+            this.txtNieuwWachtwoord.TabIndex = 8;
             // 
             // frmLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(426, 287);
+            this.Controls.Add(this.txtNieuwWachtwoord);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.btnWijzigWachtwoord);
             this.Controls.Add(this.btnVerwijder);
             this.Controls.Add(this.btnRegistreren);
             this.Controls.Add(this.btnLogin);
@@ -128,6 +160,9 @@
         private System.Windows.Forms.Button btnLogin;
         private System.Windows.Forms.Button btnRegistreren;
         private System.Windows.Forms.Button btnVerwijder;
+        private System.Windows.Forms.Button btnWijzigWachtwoord;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox txtNieuwWachtwoord;
     }
 }
 
