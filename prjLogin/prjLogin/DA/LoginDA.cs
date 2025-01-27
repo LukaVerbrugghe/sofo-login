@@ -65,7 +65,7 @@ namespace prjLogin.DA
         public static void Delete(Login L)
         {
             MySqlConnection conn = Database.MaakVerbinding();
-            string query = "DELETE FROM login.tbllogin(username, password) WHERE Username = @Username AND Password = @Password";
+            string query = "DELETE FROM login.tbllogin WHERE Username = @Username AND Password = @Password";
             MySqlCommand sqlCmd = new MySqlCommand(query, conn);
             sqlCmd.CommandType = System.Data.CommandType.Text;
             sqlCmd.Parameters.AddWithValue("@Username", L.Username);
